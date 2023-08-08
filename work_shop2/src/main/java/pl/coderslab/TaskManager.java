@@ -15,18 +15,20 @@ public class TaskManager {
         UserDao userCreation = new UserDao();
         UserDao userRead = new UserDao();
         UserDao userRead2 = new UserDao();
+        UserDao userDaoArr = new UserDao();
+        User user5 = userRead.read(5);
+        user5.setPassword("nowe hasło");
+        user5.setUserName("Nowa nazwa urzytkownika");
+        userRead.update(user5);
 
-            User user5 = userRead.read(5);
-            System.out.println(user5.getId());
-            System.out.println(user5.getEmail());
-            UserDao userDaoArr = new UserDao();
-            User[]  userArr = userDaoArr.findAll("users");
+        User[] userArr = userDaoArr.findAll("users");
 
-            System.out.println(userArr[4].getPassword());
+        System.out.println(userArr[3].toString());
 
-            User userNotExists = userRead2.read(3);
+        System.out.println(user5.toString());
 
-            System.out.println(userNotExists.getUserName());
+
+
 
 
         Connection conn = DbUtil.getConnection();

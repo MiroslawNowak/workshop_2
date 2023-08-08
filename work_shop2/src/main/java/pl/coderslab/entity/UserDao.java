@@ -13,6 +13,23 @@ public class UserDao {
 
     private static final String DELETE_QUERY = "DELETE FROM users WHERE id = ?";
     private static final String PRINT_ALL_QUERY = "SELECT * FROM tableName";
+    private static final String UPDATE_QUERY = "UPDATE users SET users.email = ?, users.username = ?, users.password = ? WHERE users.id = ?";
+
+
+    public void update(User user) {
+        try {
+            Connection conn = DbUtil.getConnection();
+            PreparedStatement statement = conn.prepareStatement(UPDATE_QUERY);
+            statement.setString(1, user.getEmail());
+            statement.setString(2, user.getUserName());
+            statement.setString(3, hashPassword(user.getPassword()));
+            statement.setInt(4, user.getId());
+            statement.executeUpdate();
+
+        } catch (SQLException e) {
+            e.getMessage();
+        }
+    }
 
     public User[] findAll(String tableName) {
         User[] userArr;
