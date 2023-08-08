@@ -4,6 +4,7 @@ import org.mindrot.jbcrypt.BCrypt;
 import pl.coderslab.DbUtil;
 
 import java.sql.*;
+import java.util.Arrays;
 
 public class UserDao {
 
@@ -11,6 +12,36 @@ public class UserDao {
     private static final String READ_QUERY = "SELECT * FROM users WHERE users.id = ?";
 
     private static final String DELETE_QUERY = "DELETE FROM users WHERE id = ?";
+    private static final String PRINT_ALL_QUERY = "SELECT * FROM tableName";
+
+    public User[] findAll(String tableName) {
+        User[] userArr;
+        userArr = new User[0];
+        try {
+
+            Connection conn = DbUtil.getConnection();
+            PreparedStatement statment = conn.prepareStatement(PRINT_ALL_QUERY.replace("tableName", tableName));
+            ResultSet resutleSet = statment.executeQuery();
+            ResultSet resultSet = statment.executeQuery();
+            while (resultSet.next()) {
+                User user = new User();
+                user.setId(resultSet.getInt(1));
+                user.setEmail(resultSet.getString(2));
+                user.setUserName(resultSet.getString(3));
+                user.setPassword(resultSet.getString(4));
+                 userArr = addToArray(user, userArr);
+            }
+        } catch (SQLException e) {
+            e.getMessage();
+        }
+        return userArr;
+    }
+
+    private User[] addToArray(User u, User[] users) {
+        User[] tmpUsers = Arrays.copyOf(users, users.length + 1);
+        tmpUsers[users.length] = u;
+        return tmpUsers;
+    }
 
     public void delete (int userId) {
         try {

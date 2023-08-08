@@ -5,15 +5,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="fda2e777-e127-40b3-bf75-5f028f4446fa" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/target/classes/pl/coderslab/DbUtil.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/pl/coderslab/TaskManager.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/pl/coderslab/entity/User.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/pl/coderslab/entity/UserDao.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources.local.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.local.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/pl/coderslab/TaskManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pl/coderslab/TaskManager.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/pl/coderslab/entity/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pl/coderslab/entity/User.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/pl/coderslab/entity/UserDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pl/coderslab/entity/UserDao.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/pl/coderslab/TaskManager.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/pl/coderslab/TaskManager.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/pl/coderslab/entity/UserDao.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/pl/coderslab/entity/UserDao.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />

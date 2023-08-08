@@ -5,6 +5,7 @@ import pl.coderslab.entity.UserDao;
 
 import java.sql.Connection;
 import java.sql.SQLException;
+import java.util.Arrays;
 
 public class TaskManager {
     public static void main(String[] args) {
@@ -18,11 +19,15 @@ public class TaskManager {
             User user5 = userRead.read(5);
             System.out.println(user5.getId());
             System.out.println(user5.getEmail());
+            UserDao userDaoArr = new UserDao();
+            User[]  userArr = userDaoArr.findAll("users");
 
-            User userNotExists = userRead2.read(1);
+            System.out.println(userArr[4].getPassword());
+
+            User userNotExists = userRead2.read(3);
+
             System.out.println(userNotExists.getUserName());
 
-        userRead.delete(3);
 
         Connection conn = DbUtil.getConnection();
         } catch (SQLException e) {
