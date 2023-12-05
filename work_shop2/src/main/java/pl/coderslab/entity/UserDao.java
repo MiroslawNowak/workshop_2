@@ -73,8 +73,7 @@ public class UserDao {
 
     public User read(int userId) {
         User user = new User();
-        try {
-            Connection conn = DbUtil.getConnection();
+        try (Connection conn = DbUtil.getConnection()) {
             PreparedStatement statement = conn.prepareStatement(READ_QUERY);
             statement.setInt(1, userId);
             ResultSet resultSet = statement.executeQuery();
